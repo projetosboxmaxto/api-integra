@@ -1,0 +1,9 @@
+{
+  "name": "BOXNET MMS - Api de Integração ao sistema de transcrição",
+  "version": "1.0.0",
+  "description": "Documentação para integração da api",
+  "title": "BOXNET MMS INTEGRACAO - API",
+  "url_ci" : "http://api-integra.cicomunicacao.com.br/v1",
+  "url" : "http://api-integra.boxnet.com.br/v1"
+
+}

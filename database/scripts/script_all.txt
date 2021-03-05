@@ -1,0 +1,61 @@
+
+
+-- isso aqui roda no midiaclip também 
+alter table programa add id_emissora int;
+
+alter table programa add index ix_id_emissora (id_emissora); 
+
+
+
+alter table dicionario_tags add id_registro_importado int;
+alter table dicionario_tags add tabela_importado varchar(50);
+
+alter table dicionario_tags add index ix_registro_tabela (id_registro_importado, tabela_importado );
+
+
+
+alter table classes_cliente add id_registro_importado int;
+alter table classes_cliente add tabela_importado varchar(50);
+
+alter table classes_cliente add index ix_registro_tabela (id_registro_importado, tabela_importado );
+
+-- também roda no midiaclip
+
+insert into midiaclip_integrador.tipo_cadastro_fixo (id, descricao)
+select id, descricao from midiaclip_producao.tipo_cadastro_fixo;
+
+
+insert into midiaclip_integrador.tipo_cadastro_basico (id, descricao)
+select id, descricao from midiaclip_producao.tipo_cadastro_basico;
+
+
+insert into midiaclip_integrador.cadastro_fixo (id, descricao, id_tipo_cadastro_fixo, campo1, campo2 )
+   select id, descricao, id_tipo_cadastro_fixo, campo1, campo2 from midiaclip_producao.cadastro_fixo;
+
+
+
+
+alter table users add api_token text;
+
+
+
+ALTER TABLE `users`
+	CHANGE COLUMN `access_token` `access_token` TEXT NULL DEFAULT NULL COLLATE 'utf8mb4_unicode_ci' AFTER `password`,
+	CHANGE COLUMN `remember_token` `remember_token` TEXT NULL DEFAULT NULL COLLATE 'utf8mb4_unicode_ci' AFTER `access_token`;
+
+
+
+alter table users add id_usuario int ;
+alter table users add index ix_id_usuario ( id_usuario );
+
+
+insert into usuario (login, senha, nome, email)
+values ('admin@admin.com',md5('integrador2020'), 'Administrador', 'admin@admin.com.br');
+
+
+-- banco do ctrl --
+ALTER TABLE `eventos_arquivos`
+	CHANGE COLUMN `meta_dados` `meta_dados` LONGTEXT NULL AFTER `tipo`;
+
+
+alter table eventos_arquivos_palavras add column sentimento varchar(40);
