@@ -48,6 +48,7 @@ class IntegradorController extends Controller {
 
             if ($request->input("arquivos") == "1")
             {
+                echo "TESTE";die;
                 $drarquivo = new \App\Arquivos();
                 ConfigDao::configuraChave($drarquivo, "arquivos");
 
