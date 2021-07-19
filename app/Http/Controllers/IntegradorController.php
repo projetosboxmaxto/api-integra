@@ -31,7 +31,7 @@ class IntegradorController extends Controller {
             
            $dr = new \App\MateriaRadiotvJornal();
            ConfigDao::configuraChave($dr, "materia_radiotv_jornal");
-           echo "TESTE 2";die;  
+
             $obj_saida = array(
                 "id"=>"",
                 "servidor"=>$dr->servidor,
