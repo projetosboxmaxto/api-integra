@@ -26,4 +26,10 @@ Route::get('/Pool/Historico', 'PoolController@historico');
 Route::get('/Pool/Runing', 'PoolController@Runing_get');
 Route::post('/Pool/Runing', 'PoolController@Runing_post');
 
+Route::get('/arquivos', 'ArquivosController@index');
+Route::get('/arquivos/{id}', 'ArquivosController@show');
+Route::put('/arquivos/{id}', 'ArquivosController@update');
+Route::post('/arquivos', 'ArquivosController@create');
+Route::delete('/arquivos/{id}', 'ArquivosController@destroy');
+
 

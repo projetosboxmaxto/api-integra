@@ -74,7 +74,6 @@ Route::group([
                 
 		Route::resource('whatsapp_contatos', 'LoginClienteRegistrosController');
 		Route::resource('whatsapp_pool', 'LoginClienteWhatsappPoolController');
-                
-                
+
 
 });
