@@ -28,6 +28,7 @@ class IntegradorController extends Controller {
     
         public function getnewid(Request $request)
         {
+            echo "TESTE 0";die;
            $dr = new \App\MateriaRadiotvJornal();
            ConfigDao::configuraChave($dr, "materia_radiotv_jornal");
               
@@ -48,7 +49,6 @@ class IntegradorController extends Controller {
 
             if ($request->input("arquivos") == "1")
             {
-                echo "TESTE";die;
                 $drarquivo = new \App\Arquivos();
                 ConfigDao::configuraChave($drarquivo, "arquivos");
 
