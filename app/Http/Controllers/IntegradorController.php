@@ -28,10 +28,10 @@ class IntegradorController extends Controller {
     
         public function getnewid(Request $request)
         {
-            echo "TESTE 0";die;
+            
            $dr = new \App\MateriaRadiotvJornal();
            ConfigDao::configuraChave($dr, "materia_radiotv_jornal");
-              
+           echo "TESTE 2";die;  
             $obj_saida = array(
                 "id"=>"",
                 "servidor"=>$dr->servidor,
